@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1518910173 source:c:\users\ravi.assis\documents\lista1\ex18\main.c
+	<stdio.h>
+	<stdlib.h>
+	"..\functions\functions.h"
+
+1518910431 c:\users\ravi.assis\documents\lista1\functions\functions.h
+
+1519392385 source:c:\users\1096109\downloads\lista1-20180223t115932z-001\lista1\ex18\main.c
+	<stdio.h>
+	<stdlib.h>
+	"..\functions\hanoi.h"
+
+1519392574 c:\users\1096109\downloads\lista1-20180223t115932z-001\lista1\functions\hanoi.h
+

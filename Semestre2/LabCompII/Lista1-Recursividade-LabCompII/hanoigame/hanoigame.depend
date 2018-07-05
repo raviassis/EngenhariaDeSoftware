@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1519390265 source:c:\users\1096109\downloads\lista1-20180223t115932z-001\lista1\hanoigame\main.c
+	<stdio.h>
+	<stdlib.h>
+	"..\functions\hanoi.h"
+
+1519390224 c:\users\1096109\downloads\lista1-20180223t115932z-001\lista1\functions\hanoi.h
+

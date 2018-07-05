@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1518782342 source:c:\users\1096109\desktop\lista1\ex2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"..\functions\functions.h"
+
+1518783242 c:\users\1096109\desktop\lista1\functions\functions.h
+
