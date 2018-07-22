@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1508562955 source:c:\users\ravi\desktop\lab1\exercicios algoritmos\ex2\main.c
+	<stdio.h>
+	<stdlib.h>
+

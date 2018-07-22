@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1506664757 source:c:\users\ravi\desktop\labi\procedimentos\ex2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

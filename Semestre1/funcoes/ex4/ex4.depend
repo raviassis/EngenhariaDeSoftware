@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1507958609 source:c:\users\ravi\desktop\lab1\ex4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../funcoes.h"
+
+1507958723 c:\users\ravi\desktop\lab1\funcoes.h
+

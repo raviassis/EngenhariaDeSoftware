@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1507955351 source:c:\users\ravi\desktop\lab1\valida_cpf\main.c
+	<stdio.h>
+	<stdlib.h>
+

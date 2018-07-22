@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1506596327 source:c:\users\ravi\desktop\labi\lista 1\5-f\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

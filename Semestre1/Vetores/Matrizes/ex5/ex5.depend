@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1509939945 source:c:\users\ravi\desktop\nova pasta\ex5\main.c
+	<stdio.h>
+	<stdlib.h>
+

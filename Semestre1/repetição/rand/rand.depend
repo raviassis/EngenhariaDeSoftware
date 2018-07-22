@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1507029321 source:c:\users\1096109\desktop\repetição\rand\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<locale.h>
+

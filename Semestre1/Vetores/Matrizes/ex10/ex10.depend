@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1510028492 source:c:\users\ravi\desktop\vetores\ex10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
