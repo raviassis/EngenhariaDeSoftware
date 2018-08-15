@@ -6,18 +6,18 @@ public class Application {
 	public static Scanner ext = new Scanner(System.in);
 	public static ConsoleTools tools = new ConsoleTools();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
-		Cellule Map[][] = new Cellule[40][40];
+		Cellule Map[][] = factory();
 		Map = initialize(Map);
 		welcome();
 		
-		Map = userInputs(Map);
+		//Map = userInputs(Map);
 		
 		print(Map);
 		tools.pause();
 		while (true) {
-			interaction(Map);
+			Map = interaction(Map);
 			print(Map);
 			tools.pause();
 		}
@@ -35,8 +35,8 @@ public class Application {
 			ext.nextLine();
 			System.out.println();
 			
-			if (lin > 0 && col > 0 && lin < 40 && col < 40) map[lin][col].live();
-			else System.out.println("Coordenadas fora da aréa!");
+			if (lin >= 0 && col >= 0 && lin < map.length && col < map[lin].length) map[lin][col].live();
+			else System.out.println("Coordenadas fora da área!");
 			
 			System.out.println("Deseja inserir mais células? (S/N)");
 			r = ext.nextLine();
@@ -50,14 +50,18 @@ public class Application {
 
 	private static Cellule[][] initialize(Cellule[][] map) {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < map.length; i++) {
-			for (int j = 0; j < map[i].length; j++) {
-				map[i][j] = new Cellule();
-			}
-		}
-		
+		map[0][0].live();
+		map[0][1].live();
+		map[1][1].live();
+		map[2][2].live();
+		map[2][3].live();
+		map[3][0].live();
+		map[3][2].live();
+		map[3][3].live();
 		return map;
 	}
+	
+	
 
 	private static void print(Cellule[][] map) {
 		// TODO Auto-generated method stub
@@ -73,12 +77,65 @@ public class Application {
 		System.out.println();
 	}
 
-	private static void interaction(Cellule[][] map) {
+	private static Cellule[][] interaction(Cellule[][] map) throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		
-		map = proliferate(map);
-		map = extinguish(map);
+		Cellule[][] newMap = factory();
+		
+		for (int i = 0; i < newMap.length; i++) {
+			for (int j = 0; j < newMap[i].length; j++) {
+				newMap[i][j] = (Cellule) map[i][j].clone();
+			}
+		}
+		
+		for (int i = 0; i < newMap.length; i++) {
+			for (int j = 0; j < newMap[i].length; j++) {
+				int neighbors = countNeighborsAlive(map, i, j);
+				
+				if (map[i][j].getState() == State.ALIVE && !(neighbors == 2 || neighbors == 3)) {
+					newMap[i][j].die();
+				}
+				else if (map[i][j].getState() == State.DEAD && neighbors == 3 ) {
+					newMap[i][j].live();
+				}
+			}
+		}		
+		
+		/*System.out.println("mapa antigo");
+		print(map);
+		
+		System.out.println("mapa novo");
+		print(newMap);*/
+		
+		
+		return newMap;
 			
+	}
+	
+	private static Cellule[][] factory() {
+		// TODO Auto-generated method stub
+		Cellule map[][] = new Cellule[4][4];
+		
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[i].length; j++) {
+				map[i][j] = new Cellule();
+			}
+		}
+		return map;
+	}
+
+	private static Cellule[][] process(Cellule[][] map, int i, int j) {
+		
+		int neighbors = countNeighborsAlive(map, i, j);
+		
+		if (map[i][j].getState() == State.ALIVE && !(neighbors == 2 || neighbors == 3)) {
+			map[i][j].die();
+		}
+		else if (map[i][j].getState() == State.DEAD && neighbors == 3 ) {
+			map[i][j].live();
+		}
+		
+		return map;
 	}
 
 	private static Cellule[][] extinguish(Cellule[][] map) {
@@ -120,19 +177,19 @@ public class Application {
 		
 		//checks northwest
 		k = i -1; l = j -1;
-		if ( k > 0 && l > 0 && map[k][l].getState() == State.ALIVE ) count++;
+		if ( k >= 0 && l >= 0 && map[k][l].getState() == State.ALIVE ) count++;
 		
 		//checks north
 		k = i - 1; l = j;
-		if ( k > 0 && map[k][l].getState() == State.ALIVE) count++;
+		if ( k >= 0 && map[k][l].getState() == State.ALIVE) count++;
 		
 		//checks northeast
 		k = i - 1; l = j + 1;
-		if ( k > 0 && l < map[i].length && map[k][l].getState() == State.ALIVE) count++;
+		if ( k >= 0 && l < map[i].length && map[k][l].getState() == State.ALIVE) count++;
 		
 		//checks west
 		k = i; l = j - 1;
-		if ( l > 0 && map[k][l].getState() == State.ALIVE) count++;
+		if ( l >= 0 && map[k][l].getState() == State.ALIVE) count++;
 		
 		//checks east
 		k = i; l = j + 1;
@@ -140,7 +197,7 @@ public class Application {
 		
 		//checks southwest
 		k = i + 1; l = j - 1;
-		if ( k < map.length && l > 0 && map[k][l].getState() == State.ALIVE) count++;
+		if ( k < map.length && l >= 0 && map[k][l].getState() == State.ALIVE) count++;
 		
 		//checks south
 		k = i + 1; l = j;

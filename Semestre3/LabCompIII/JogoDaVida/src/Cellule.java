@@ -1,5 +1,13 @@
 
 public class Cellule {
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		Cellule c = new Cellule();
+		c.setState(state);
+		return c;
+	}
+
 	private State state;
 	
 	public Cellule() {
