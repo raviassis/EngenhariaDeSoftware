@@ -21,7 +21,6 @@ public class Ex1 {
 	}
 
 	private static void show(int[] vet) {
-		// TODO Auto-generated method stub
 		System.out.println("\nResultado");
 		for(int i = 0; i < vet.length; i++) {
 			System.out.print(vet[i] + " ");
@@ -30,12 +29,10 @@ public class Ex1 {
 	}
 
 	private static void quickSort(int[] vet) {
-		// TODO Auto-generated method stub
 		Ex1.quickSort(vet, 0, vet.length -1);
 	}
 
 	private static void quickSort(int[] v, int esquerda, int direita) {
-		// TODO Auto-generated method stub
 		int esq = esquerda;
 		int dir = direita;
 		int pivo = v[(esq + dir) / 2];
@@ -62,7 +59,6 @@ public class Ex1 {
 	}
 
 	private static int[] tratarExpressao(String expressao) {
-		// TODO Auto-generated method stub
 		
 		String [] vetS = expressao.split(" ");
 		int [] vet = new int[vetS.length];
