@@ -1,13 +1,18 @@
-package main;
+package exercicios;
 
-public class Application {
+import java.util.Scanner;
 
+public class Ex5 {
+
+	private static Scanner ext = new Scanner(System.in);
 	static String [][] tab;
 	static int [] linRainhas;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int nR = 20;
+	public static void start() {
+		System.out.println("\nQuestao 5");
+		System.out.println("Problema das N Rainhas");
+		System.out.print("Informe o número de rainhas: ");
+		int nR = ext.nextInt(); clearBuffer();
 		tab = factoryTabuleiro(nR);
 		linRainhas = factoryVetorAux(nR);
 		int contR = 0;	
@@ -23,9 +28,8 @@ public class Application {
 		}
 		
 		show(tab);
-		
 	}
-
+	
 	private static void show(String[][] tab2) {
 		// TODO Auto-generated method stub
 		for (int l = 0; l < tab.length; l++) {
@@ -35,7 +39,12 @@ public class Application {
 			System.out.println();
 		}
 	}
-
+	
+	private static void clearBuffer() {
+		// TODO Auto-generated method stub
+		ext.nextLine();		
+	}
+	
 	private static int[] factoryVetorAux(int nR) {
 		// TODO Auto-generated method stub
 		int [] v = new int[nR];
@@ -98,12 +107,7 @@ public class Application {
 		
 		return p;
 	}
-
-	private static void colocaRainha(String[][] tab, int[] linRainhas) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	private static String[][] factoryTabuleiro(int n) {
 		// TODO Auto-generated method stub
 		String [][] t = new String[n][n];
@@ -115,7 +119,5 @@ public class Application {
 		}
 		return t;
 	}
-	
-	
 
 }

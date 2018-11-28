@@ -6,7 +6,9 @@ import exercicios.Ex1;
 import exercicios.Ex2;
 import exercicios.Ex3;
 import exercicios.Ex4;
+import exercicios.Ex5;
 import exercicios.Ex7;
+import exercicios.Ex8;
 
 public class Application {
 	
@@ -34,8 +36,14 @@ public class Application {
 				case 4 :
 					Ex4.start();
 					break;
+				case 5 :
+					Ex5.start();
+					break;
 				case 7:
 					Ex7.start();
+					break;
+				case 8 :
+					Ex8.start();
 					break;
 				case 9 :
 					System.out.println("--- Até mais ---");
@@ -54,7 +62,9 @@ public class Application {
 		System.out.println("2 - Questão 2");
 		System.out.println("3 - Questão 3");
 		System.out.println("4 - Questão 4");
+		System.out.println("5 - Questão 5");
 		System.out.println("7 - Questão 7");
+		System.out.println("8 - Questão 8");
 		System.out.println("9 - Sair\n");
 		System.out.print("> ");
 		
